@@ -1,0 +1,52 @@
+{
+	"name": "@hubgets/TODO",
+	"description": "TODO",
+	"version": "1.0.0",
+	"keywords": [
+		"TODO"
+	],
+	"license": "UNLICENSED",
+	"author": "Mihai Voicescu <mihaivo@4psa.com>",
+	"repository": "https://stash.4psa.me/projects/HM/repos/TODO/browse",
+	"dependencies": {
+		"@hubgets/lib.error": "1",
+		"http-server": "^0.12.3"
+	},
+	"devDependencies": {
+		"@hubgets/build.hubmodule.heros-library": "1",
+		"@hubgets/build.hubmodule.mobile.devenv": "2",
+		"@types/node": "13",
+		"@types/karma-chai": "0",
+		"@types/mocha": "5",
+		"@zoltu/typescript-transformer-append-js-extension": "1",
+		"ttypescript": "1"
+	},
+	"nativescript": true,
+	"publishConfig": {
+		"registry": "https://fractal.4psa.me"
+	},
+	"engines": {
+		"node": ">= 10.14.0"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "npx gulp -f Gulpfile.cjs build",
+		"codecheck": "npx gulp -f Gulpfile.cjs codecheck",
+		"test": "mocha -r esm ./test/**/*.spec.js",
+		"doc": "npx gulp -f Gulpfile.cjs doc",
+		"clean": "npx gulp -f Gulpfile.cjs clean",
+		"buildall": "npx gulp -f Gulpfile.cjs buildall",
+		"report": "rm -rf ./node_modules/.cache; nyc --reporter=html npm test"
+	},
+	"exports": {
+		".": "./dist/index.node.js"
+	},
+	"files": [
+		"lib/**/*.js",
+		"lib/**/*.js.map",
+		"lib/**/*.d.ts",
+		"lib/**/*.ts"
+	],
+	"main": "dist/index.js",
+	"types": "lib/index.d.ts"
+}
