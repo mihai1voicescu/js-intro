@@ -36,7 +36,7 @@ Create a class hierarchy related to a school catalog. The minimum classes should
 All information regarding the entities must be stored in SQL, so a static method named "create" must be used to
 fetch the data from SQL and instantiate the entity (explain why this is needed).
 
-Give them some miscellanies properties and methods, such as (name, birthDate, grades etc and fire(),
+Give them some miscellaneous properties and methods, such as (name, birthDate, grades etc and fire(),
 promote(), evaluateStudent() etc). Be careful the state must be persistent -> SQL
 
 Create one version with the "class" keyword and one in the explicit "prototype" + "function" way
