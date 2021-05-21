@@ -9,13 +9,11 @@
 	"author": "Mihai Voicescu <mihaivo@4psa.com>",
 	"repository": "https://stash.4psa.me/projects/HM/repos/TODO/browse",
 	"dependencies": {
-		"@hubgets/lib.error": "1",
 		"fastify": "^2.14.1",
-		"http-server": "^0.12.3"
+		"http-server": "^0.12.3",
+		"mysql2": "^2.2.5"
 	},
 	"devDependencies": {
-		"@hubgets/build.hubmodule.heros-library": "1",
-		"@hubgets/build.hubmodule.mobile.devenv": "2",
 		"@types/node": "13",
 		"@types/karma-chai": "0",
 		"@types/mocha": "5",
