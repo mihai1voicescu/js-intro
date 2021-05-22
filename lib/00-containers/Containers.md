@@ -57,7 +57,7 @@ First lets kill all containers, just to be sure we are not running anything
 docker run -p 127.0.0.1:3306:3306  --rm --name mariadb -e MARIADB_ROOT_PASSWORD=pass -d mariadb:latest
 ```
 
-    a101b828c080eb85641ba7451d8d5cef55c6752e00c11f5635d024b2df5a2cd2
+    0f56e11bad05bef8763636eb4e7fdb0ec609832ac30d88ac6dbe6eb5e1f9bbf0
 
 
 
@@ -99,7 +99,8 @@ Lets check if there are any running containers
 docker container ls
 ```
 
-    CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+    CONTAINER ID   IMAGE                           COMMAND                  CREATED              STATUS          PORTS                                       NAMES
+    fd156cd247ac   mihai1voicescu/badass-jupyter   "docker-entrypoint.s…"   About a minute ago   Up 58 seconds   0.0.0.0:8888->8888/tcp, :::8888->8888/tcp   great_taussig
 
 
 Now lets create a network and add them to our network
@@ -109,7 +110,7 @@ Now lets create a network and add them to our network
 docker network create awsome-network
 ```
 
-    c82849707350b58c94974cfe1e092a771b33f3c10a545a542028a529865e0539
+    f15a9179390ea49edb90fcdcbb0d53d62d1b79dc72e9a38518e50a4c21dd803a
 
 
 
@@ -117,14 +118,14 @@ docker network create awsome-network
 docker run -p 127.0.0.1:3306:3306 --network awsome-network  --rm --name mariadb -e MARIADB_ROOT_PASSWORD=pass -d mariadb:latest
 ```
 
-    630396eb359bebd5a02c183e257d611f23c598ec01a6ce9f55b2df357d142908
+    9f662bbfff1cd0ab2d1a13deaa1efb73632e3424d875c7037147814436e6a01e
 
 
 Now we can run this in a terminal (because it's interactive)
 
 
 ```bash
-# docker run -it --network awsome-network --rm mariadb mysql -hmariadb -uroot -ppassb
+# docker run -it --network awsome-network --rm mariadb mysql -hmariadb -uroot -ppass
 ```
 
 Now let's kill the mariadb instance
