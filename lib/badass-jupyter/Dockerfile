@@ -1,9 +1,3 @@
-
-
-
-
-
-
 # start from a base image
 FROM node:latest
 
