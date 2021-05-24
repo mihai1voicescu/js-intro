@@ -3,7 +3,7 @@ FROM node:latest
 
 # run various command, ussualy installs
 RUN apt-get update
-RUN apt-get install -y python3 python3-notebook jupyter jupyter-core
+RUN apt-get install -y python3 python3-notebook jupyter jupyter-core docker-compose
 
 RUN pip3 install pyzmq bash_kernel
 RUN npm i -g ijavascript
