@@ -1,0 +1,5 @@
+FROM mariadb
+ENV MYSQL_ROOT_PASSWORD=pass
+EXPOSE 3306
+COPY setup.sql /docker-entrypoint-initdb.d/
+CMD ["/usr/local/bin/docker-entrypoint.sh", "mysqld", "--datadir", "/initialized-db", "--aria-log-dir-path", "/initialized-db"]
